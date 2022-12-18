@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+umask 0002
+
+if [ "$1" == "--" ]; then
+
+  /usr/bin/sudo /usr/bin/systemctl --quiet disable clamav-milter-autodiscovery.service
+
+  if test -f "disabled"; then
+    echo "antivirus is already disabled."
+  elif test -f "enabled"; then
+    touch "updated"
+    mv "enabled" "disabled"
+    /usr/bin/sudo /usr/bin/systemctl stop clamav-milter-autodiscovery.service
+  fi
+
+fi
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+umask 0002
+
+if [ "$1" == "--" ]; then
+
+  /usr/bin/freshclam
+
+fi
+

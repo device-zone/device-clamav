@@ -1,0 +1,17 @@
+# systemd service for managing all clamav autoconfiguration.
+
+[Unit]
+Description=Clamd Server Configuration Autodiscovery
+Before=clamd@scan.service
+BindsTo=clamd@scan.service
+PartOf=clamav-milter-autodiscovery.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /usr/libexec/device-clamav-autodiscovery
+ExecReload=/bin/bash /usr/libexec/device-clamav-autodiscovery
+RemainAfterExit=on
+
+[Install]
+WantedBy=multi-user.target
+
