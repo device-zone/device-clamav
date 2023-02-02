@@ -19,5 +19,10 @@ if [ "$1" == "--" ]; then
     echo "antivirus will be enabled on next reboot."
   fi
 
+  if test -f "enabled"; then
+    mkdir -p /etc/device/services/mail/smtp/milters
+    ln -s /run/clamav-milter/clamav-milter.socket /etc/device/services/mail/smtp/milters/40-clamav
+  fi
+
 fi
 
