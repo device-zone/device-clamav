@@ -60,7 +60,7 @@ MilterSocket unix:/run/clamav-milter/clamav-milter.socket
 
 # Sets the permissions on the (unix) milter socket to the specified mode.
 # Default: disabled (obey umask)
-#MilterSocketMode 660
+MilterSocketMode 660
 
 # Remove stale socket after unclean shutdown.
 #
