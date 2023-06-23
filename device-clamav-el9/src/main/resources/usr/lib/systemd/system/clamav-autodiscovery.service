@@ -8,8 +8,8 @@ PartOf=clamav-milter-autodiscovery.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash /usr/libexec/device-clamav-autodiscovery
-ExecReload=/bin/bash /usr/libexec/device-clamav-autodiscovery
+ExecStart=/bin/bash /usr/libexec/device-autodiscovery/clamav
+ExecReload=/bin/bash /usr/libexec/device-autodiscovery/clamav
 RemainAfterExit=on
 
 [Install]

@@ -111,7 +111,7 @@
               </sources>
             </mapping>
             <mapping>
-              <directory>/usr/libexec/</directory>
+              <directory>/usr/libexec/device-autodiscovery</directory>
               <directoryIncluded>false</directoryIncluded>
               <filemode>755</filemode>
               <username>root</username>
@@ -119,12 +119,12 @@
               <sources>
                 <source>
                   <location>target/classes/usr/libexec/device-clamav-autodiscovery</location>
-                  <destination>device-clamav-autodiscovery</destination>
+                  <destination>clamav</destination>
                 </source>
               </sources>
             </mapping>
             <mapping>
-              <directory>/usr/libexec/device-clamav-autodiscovery.d</directory>
+              <directory>/usr/libexec/device-autodiscovery/clamav.d</directory>
               <directoryIncluded>true</directoryIncluded>
               <filemode>755</filemode>
               <username>root</username>

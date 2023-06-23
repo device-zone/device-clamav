@@ -131,7 +131,7 @@
               </sources>
             </mapping>
             <mapping>
-              <directory>/usr/libexec/</directory>
+              <directory>/usr/libexec/device-autodiscovery</directory>
               <directoryIncluded>false</directoryIncluded>
               <filemode>755</filemode>
               <username>root</username>
@@ -139,7 +139,7 @@
               <sources>
                 <source>
                   <location>target/classes/usr/libexec/device-clamav-milter-autodiscovery</location>
-                  <destination>device-clamav-milter-autodiscovery</destination>
+                  <destination>clamav-milter</destination>
                 </source>
               </sources>
             </mapping>
