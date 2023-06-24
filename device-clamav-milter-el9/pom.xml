@@ -163,6 +163,9 @@
                 <source>
                   <location>target/classes/usr/libexec/device/services/mail/smtp/antivirus/disable</location>
                 </source>
+                <source>
+                  <location>target/classes/usr/libexec/device/services/mail/smtp/antivirus/set</location>
+                </source>
               </sources>
             </mapping>
           </mappings>

@@ -1,23 +1,23 @@
 #!/bin/sh
-
+  
 set -e
 umask 0002
 
 if [ "$1" == "--" ]; then
 
-  /usr/bin/sudo /usr/bin/systemctl --quiet disable clamav-milter-autodiscovery.service
+  /usr/bin/sudo /usr/bin/systemctl --quiet disable clamav-milter.service
 
-  if test -f "disabled"; then
+  if test -f "disabled.bin"; then
     echo "antivirus is already disabled."
-  elif test -f "enabled"; then
-    touch "updated"
-    mv "enabled" "disabled"
-    /usr/bin/sudo /usr/bin/systemctl stop clamav-milter-autodiscovery.service
-  fi
-
-  if test -f "disabled"; then
-    /bin/rm -f /etc/device/services/mail/smtp/milters/40-clamav
+  else
+    touch "disabled.bin"
+    if systemctl is-active --quiet clamav-milter-autodiscovery.service; then
+      /usr/bin/sudo /usr/bin/systemctl stop clamav-milter.service
+    else
+      echo "antivirus will be disabled on next reboot."
+    fi
   fi
 
 fi
+
 

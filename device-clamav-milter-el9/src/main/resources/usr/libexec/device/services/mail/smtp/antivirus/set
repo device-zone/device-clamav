@@ -1,0 +1,34 @@
+#!/bin/sh
+
+set -e
+umask 0002
+
+OPTIONS="--polar disabled"
+
+if [ "$1" == "--" ]; then
+
+  /usr/libexec/device-set ${OPTIONS} "$@"
+
+  if test -f "disabled.bin"; then
+    /usr/bin/sudo /usr/bin/systemctl --quiet disable clamav-milter.service
+    if systemctl is-active --quiet clamav-milter-autodiscovery.service; then
+      /usr/bin/sudo /usr/bin/systemctl stop clamav-milter.service
+    else
+      echo "antivirus will be disabled on next reboot."
+    fi
+  else
+    /usr/bin/sudo /usr/bin/systemctl --quiet enable clamav-milter.service
+    if systemctl is-active --quiet clamav-milter-autodiscovery.service; then
+      /usr/bin/sudo /usr/bin/systemctl restart clamav-milter-autodiscovery.service
+      /usr/bin/sudo /usr/bin/systemctl restart clamav-milter.service
+    else
+      echo "antivirus will be enabled on next reboot."
+    fi
+  fi
+
+elif [ "$1" == "-c" ]; then
+
+  /usr/libexec/device-set ${OPTIONS} "$@"
+
+fi
+

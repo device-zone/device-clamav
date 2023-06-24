@@ -1,9 +1,7 @@
 if [ $1 = 0 ]; then
-  /usr/bin/systemctl stop unbound-autodiscovery.service
-  /usr/bin/systemctl stop unbound-keygen.service
-  /usr/bin/systemctl stop unbound.service
-  /usr/bin/systemctl disable unbound-autodiscovery.service
-  /usr/bin/systemctl disable unbound-keygen.service
-  /usr/bin/systemctl disable unbound.service
+  /usr/bin/systemctl stop clamav-milter-autodiscovery.service
+  /usr/bin/systemctl stop clamav-milter.service
+  /usr/bin/systemctl disable clamav-milter-autodiscovery.service
+  /usr/bin/systemctl disable clamav-milter.service
 fi
 
