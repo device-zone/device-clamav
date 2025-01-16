@@ -20,9 +20,9 @@
   </organization>
 
   <scm>
-    <connection>scm:svn:https://github.com/device-zone/device-clamav/trunk</connection>
-    <developerConnection>scm:svn:https://github.com/device-zone/device-clamav/trunk</developerConnection>
-    <url>https://github.com/device-zone/device-clamav/trunk</url>
+    <connection>scm:git:https://github.com/device-zone/device-clamav.git</connection>
+    <developerConnection>scm:git:https://github.com/device-zone/device-clamav.git</developerConnection>
+    <url>https://github.com/device-zone/device-clamav/</url>
   </scm>
 
   <modules>
