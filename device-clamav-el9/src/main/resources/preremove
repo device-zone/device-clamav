@@ -1,7 +1,9 @@
 if [ $1 = 0 ]; then
   /usr/bin/systemctl stop clamav-autodiscovery.service
+  /usr/bin/systemctl stop clamav-freshclam.service
   /usr/bin/systemctl stop clamd@scan.service
   /usr/bin/systemctl disable clamav-autodiscovery.service
+  /usr/bin/systemctl disable clamav-freshclam.service
   /usr/bin/systemctl disable clamd@scan.service
 fi
 
